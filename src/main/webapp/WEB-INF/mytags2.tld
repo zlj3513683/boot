@@ -1,0 +1,27 @@
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+        version="2.0">
+    <description>A tag library exercising SimpleTag handlers.</description>
+    <tlib-version>1.0</tlib-version>
+    <short-name>parm</short-name>
+    <uri>myparm</uri>
+
+    <tag>
+        <description>Outputs a colored tile</description>
+        <name>fors</name>
+        <tag-class>com.example.demo.tag.ParmTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>map</name>
+            <required>true</required>
+            <fragment>true</fragment>
+        </attribute>
+        <attribute>
+            <name>b</name>
+            <required>true</required>
+            <fragment>true</fragment>
+        </attribute>
+    </tag>
+
+</taglib>

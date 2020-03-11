@@ -1,0 +1,34 @@
+package com.example.demo.jiami;
+
+import org.bouncycastle.math.ec.ECPoint;
+
+import java.math.BigInteger;
+
+/**
+ * 功能：
+ *
+ * @author 2019/12/31
+ * @author zoulinjun
+ */
+public class SM2KeyPair {
+
+    /** 公钥 */
+    private ECPoint publicKey;
+
+    /** 私钥 */
+    private BigInteger privateKey;
+
+    SM2KeyPair(ECPoint publicKey, BigInteger privateKey) {
+        this.publicKey = publicKey;
+        this.privateKey = privateKey;
+    }
+
+    public ECPoint getPublicKey() {
+        return publicKey;
+    }
+
+    public BigInteger getPrivateKey() {
+        return privateKey;
+    }
+
+}
