@@ -19,4 +19,11 @@ public class ApplicationConfig {
     private String enc_key_pub;
     @Value("${sign_private_key}")
     private String sign_private_key;
+    @Value("${appkey}")
+    private String appkey;
+    @Value("${masterSecret}")
+    private String masterSecret;
+    @Value("${message}")
+    private String message;
+
 }

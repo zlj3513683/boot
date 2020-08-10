@@ -331,7 +331,8 @@ public class FaceParmController {
                 String msg = jsonObject.toJSONString();
                 log.info("待加签字符串："+msg);
 
-                byte[] plainText = Sm3Utils.digest(msg.getBytes(Charset.forName("UTF-8")));
+//                byte[] plainText = Sm3Utils.digest(msg.getBytes(Charset.forName("UTF-8")));
+                byte[] plainText = msg.getBytes(Charset.forName("UTF-8"));
                 log.info("SM3摘要串:" + byte2HexStr(plainText));
                 Signature signature = Signature.getInstance(
                         GMObjectIdentifiers.sm2sign_with_sm3.toString()

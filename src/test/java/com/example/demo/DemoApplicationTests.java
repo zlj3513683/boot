@@ -18,7 +18,7 @@ class DemoApplicationTests {
     MessageServiceContext messageServiceContext;
     @Autowired
     private TransferRouter transferRouter;
-    @Test
+    ////@Test
     void contextLoads() {
         MessageInfo messageInfo = new MessageInfo(MsgType.IMAGE.code, "我是一个图片消息");
         MessageService messageService = messageServiceContext.getMessageService(messageInfo.getType());
@@ -27,7 +27,7 @@ class DemoApplicationTests {
         messageService.handleMessage(messageInfo);
     }
 
-    @Test
+    ////@Test
     void transferRouter() {
        String[] typeArr = {"1","3","2"};
         for (String type:typeArr

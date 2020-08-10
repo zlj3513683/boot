@@ -20,6 +20,7 @@ import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.List;
@@ -116,7 +117,7 @@ public class DemoController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "/csParm.htm", method = RequestMethod.POST)
+    @RequestMapping(value = "/csParm.htm", method = RequestMethod.GET)
     public String csParm(@RequestBody JSONObject jsonObject) {
 
         DemoRequest request = new DemoRequest(jsonObject);
@@ -136,6 +137,25 @@ public class DemoController {
         JSONObject object = new JSONObject();
         object.put("msg","失败了吗");
         return "index";
+    }
+
+    @RequestMapping(value = "/tag.htm",params = "method=edit", method = RequestMethod.GET)
+    public String tag2(HttpServletRequest request) {
+
+        Map<String, Object> errMap = new HashMap<>();
+        // 获取错误列表
+        JSONObject object = new JSONObject();
+        object.put("msg","失败了吗");
+        return "index1";
+    }
+    @RequestMapping(value = "/tag2.htm", params = "method=edit",method = RequestMethod.GET)
+    public void tag1(HttpServletRequest request, HttpServletResponse response) throws  Exception{
+
+        Map<String, Object> errMap = new HashMap<>();
+        // 获取错误列表
+        JSONObject object = new JSONObject();
+        object.put("msg","失败了吗");
+        response.sendRedirect("/tag.htm?method=edit");
     }
 
 
