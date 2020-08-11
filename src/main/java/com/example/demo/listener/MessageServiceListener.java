@@ -1,6 +1,6 @@
 package com.example.demo.listener;
 
-import com.example.demo.Service.MessageService;
+import com.example.demo.service.MessageService;
 import com.example.demo.context.MessageServiceContext;
 import com.example.demo.handle.MsgTypeHandler;
 import org.springframework.context.ApplicationListener;

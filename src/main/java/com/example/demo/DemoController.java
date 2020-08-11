@@ -2,7 +2,7 @@ package com.example.demo;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.example.demo.Service.DemoService;
+import com.example.demo.service.DemoService;
 import com.example.demo.apo.Cs;
 import com.example.demo.bean.User;
 import com.example.demo.exception.AppBizException;
@@ -12,7 +12,6 @@ import com.example.demo.request.ValidRequest;
 import com.example.demo.util.ValidatorUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
 import org.springframework.validation.FieldError;

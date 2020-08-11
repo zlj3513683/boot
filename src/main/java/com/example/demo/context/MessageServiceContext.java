@@ -1,6 +1,6 @@
 package com.example.demo.context;
 
-import com.example.demo.Service.MessageService;
+import com.example.demo.service.MessageService;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;

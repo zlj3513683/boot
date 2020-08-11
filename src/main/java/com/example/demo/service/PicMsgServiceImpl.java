@@ -1,4 +1,4 @@
-package com.example.demo.Service;
+package com.example.demo.service;
 
 import com.example.demo.bean.MessageInfo;
 import com.example.demo.enums.MsgType;
@@ -12,10 +12,11 @@ import org.springframework.stereotype.Service;
  * @author zoulinjun
  */
 @Service
-@MsgTypeHandler(value = MsgType.TEXT)
-public class TextMessageServiceImpl implements MessageService{
+@MsgTypeHandler(value = MsgType.IMAGE)
+public class PicMsgServiceImpl implements MessageService{
     @Override
     public void handleMessage(MessageInfo messageInfo) {
-        System.out.println("处理文本消息 " + messageInfo.getContent());
+        System.out.println("处理图片消息 " + messageInfo.getContent());
     }
+
 }

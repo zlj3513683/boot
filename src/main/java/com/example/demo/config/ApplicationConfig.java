@@ -15,13 +15,13 @@ import org.springframework.stereotype.Component;
 @Component
 @Data
 public class ApplicationConfig {
-    @Value("${enc_key_pub}")
+    @Value("${sign.enc_key_pub}")
     private String enc_key_pub;
-    @Value("${sign_private_key}")
+    @Value("${sign.sign_private_key}")
     private String sign_private_key;
-    @Value("${appkey}")
+    @Value("${sign.appkey}")
     private String appkey;
-    @Value("${masterSecret}")
+    @Value("${sign.masterSecret}")
     private String masterSecret;
     @Value("${message}")
     private String message;

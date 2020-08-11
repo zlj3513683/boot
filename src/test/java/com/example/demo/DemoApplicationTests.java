@@ -1,16 +1,14 @@
 package com.example.demo;
 
-import com.example.demo.Service.MessageService;
-import com.example.demo.Service.TransferChannel;
-import com.example.demo.Service.TransferRouter;
+import com.example.demo.service.MessageService;
+import com.example.demo.service.TransferChannel;
+import com.example.demo.service.TransferRouter;
 import com.example.demo.bean.MessageInfo;
 import com.example.demo.context.MessageServiceContext;
 import com.example.demo.enums.MsgType;
 import com.example.demo.enums.TransEnum;
-import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 @SpringBootTest
 class DemoApplicationTests {

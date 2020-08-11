@@ -1,6 +1,4 @@
-package com.example.demo.Service;
-
-import com.example.demo.exception.AppBizException;
+package com.example.demo.service;
 
 /**
  * 功能：
