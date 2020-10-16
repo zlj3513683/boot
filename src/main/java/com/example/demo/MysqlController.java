@@ -6,7 +6,6 @@ import com.example.demo.jiguang.Jdpush;
 import com.example.demo.service.IBussBillInfoService;
 import com.google.gson.JsonObject;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -31,11 +30,12 @@ public class MysqlController {
     @RequestMapping(method = RequestMethod.GET, produces = "application/json;charset=UTF-8", value = "/hello")
     public @ResponseBody
     JsonObject message(String message) {
+        log.info("------------------------------------执行查询了-------------------------");
         JsonObject resultModel = new JsonObject();
         BussBillInfo bussBillInfo = bussBillInfoService.selectById("0000000001160101000001");
 
         resultModel.addProperty("bill",bussBillInfo.getBillName());
-
+        log.error("---------------------------------error日志测试----------------------");
         return resultModel;
     }
 

@@ -10,6 +10,7 @@ import java.io.InputStreamReader;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -19,7 +20,6 @@ import org.apache.http.conn.ssl.SSLSocketFactory;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
-import org.apache.log4j.Logger;
 
 
 
@@ -27,8 +27,8 @@ import org.apache.log4j.Logger;
  * @author liaofen
  *
  */
+@Slf4j
 public class MockTest {
-	Logger log = Logger.getLogger(MockTest.class);
 
 	private static String url="https://58.250.203.150:8443/EpccService/NotifyServlet";
 //	private static String url="https://58.250.203.150:38080/EpccService/NotifyServlet";

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--日志级别以及优先级排序: OFF > FATAL > ERROR > WARN > INFO > DEBUG > TRACE > ALL -->
+<!-- status log4j2内部日志级别 -->
+<configuration status="INFO">
+    <!-- 全局参数 -->
+    <Properties>
+        <Property name="pattern">%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p [%t] %c{1}:%L -%m%n</Property>
+        <Property name="displayName">E:\zlj\qb\logs\boot\server</Property>
+    </Properties>
+    <Appenders>
+        <Console name="stdout" target="SYSTEM_OUT" >
+            <PatternLayout>
+                <pattern>%date [%thread] %-5level %logger{80} - %msg%n</pattern>
+            </PatternLayout>
+        </Console>
+        <!-- 文件 每次运行程序会自动清空，由append属性决定 -->
+        <RollingFile name="error" fileName="${displayName}_error.log" filePattern="${displayName}_error_%d{yyyy-MM-dd}-%i.log">
+            <!-- 指定error 级别的日志 -->
+            <ThresholdFilter level="ERROR" onMatch="ACCEPT"
+                             onMismatch="DENY" />
+            <PatternLayout>
+                <pattern>${pattern}</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1"/>
+                <SizeBasedTriggeringPolicy size="300 MB" />
+            </Policies>
+            <!-- DefaultRolloverStrategy属性如不设置，则默认为最多同一文件夹下7个文件，这里设置了20 -->
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
+        <!-- 滚动文件 -->
+        <RollingFile name="rollingFile" fileName="${displayName}.log"
+                     filePattern="${displayName}_%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout>
+                <pattern>${pattern}</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1"/>
+                <SizeBasedTriggeringPolicy size="300 MB" />
+            </Policies>
+            <!-- DefaultRolloverStrategy属性如不设置，则默认为最多同一文件夹下7个文件，这里设置了20 -->
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <!-- <Logger name="org.apache.catalina.util.LifecycleBase" level="ERROR"
+
+            /> <Logger name="org.apache.coyote.http11.Http11NioProtocol" level="WARN"
+
+            /> <Logger name="org.apache.tomcat.util.net.NioSelectorPool" level="WARN"
+
+            /> -->
+
+        <Logger name="org.springframework" level="WARN" />
+
+        <Logger name="com.example.demo" level="INFO" />
+
+        <Root level="INFO">
+
+            <AppenderRef ref="stdout"></AppenderRef>
+
+            <AppenderRef ref="error"></AppenderRef>
+
+            <AppenderRef ref="rollingFile"></AppenderRef>
+
+        </Root>
+
+    </Loggers>
+
+</configuration>
