@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.BussBillInfoDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.demo.entity.BussBillInfo">
+        <id column="bill_id" property="billId" />
+        <result column="company_id" property="companyId" />
+        <result column="billset_id" property="billsetId" />
+        <result column="bill_type" property="billType" />
+        <result column="community_no" property="communityNo" />
+        <result column="bill_month" property="billMonth" />
+        <result column="bill_name" property="billName" />
+        <result column="door_car_no" property="doorCarNo" />
+        <result column="charge_total" property="chargeTotal" />
+        <result column="template_id" property="templateId" />
+        <result column="adv_1" property="adv1" />
+        <result column="adv_2" property="adv2" />
+        <result column="adv_3" property="adv3" />
+        <result column="adv_4" property="adv4" />
+        <result column="pay_abort_date" property="payAbortDate" />
+        <result column="message_notice" property="messageNotice" />
+        <result column="mail_notice" property="mailNotice" />
+        <result column="wechat_notice" property="wechatNotice" />
+        <result column="app_notice" property="appNotice" />
+        <result column="audit_status" property="auditStatus" />
+        <result column="audit_user" property="auditUser" />
+        <result column="audit_date" property="auditDate" />
+        <result column="send_status" property="sendStatus" />
+        <result column="pay_status" property="payStatus" />
+        <result column="appeal_status" property="appealStatus" />
+        <result column="control_status" property="controlStatus" />
+        <result column="urge_pay_count" property="urgePayCount" />
+        <result column="last_urge_pay_date" property="lastUrgePayDate" />
+        <result column="last_upd_time" property="lastUpdTime" />
+        <result column="last_upd_user" property="lastUpdUser" />
+        <result column="make_user" property="makeUser" />
+        <result column="make_time" property="makeTime" />
+        <result column="charge_date" property="chargeDate" />
+        <result column="start_date" property="startDate" />
+        <result column="end_date" property="endDate" />
+        <result column="settle_st" property="settleSt" />
+        <result column="remark" property="remark" />
+        <result column="base_bill_id" property="baseBillId" />
+        <result column="batch_id" property="batchId" />
+        <result column="bill_period" property="billPeriod" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        bill_id AS billId, company_id AS companyId, billset_id AS billsetId, bill_type AS billType, community_no AS communityNo, bill_month AS billMonth, bill_name AS billName, door_car_no AS doorCarNo, charge_total AS chargeTotal, template_id AS templateId, adv_1 AS adv1, adv_2 AS adv2, adv_3 AS adv3, adv_4 AS adv4, pay_abort_date AS payAbortDate, message_notice AS messageNotice, mail_notice AS mailNotice, wechat_notice AS wechatNotice, app_notice AS appNotice, audit_status AS auditStatus, audit_user AS auditUser, audit_date AS auditDate, send_status AS sendStatus, pay_status AS payStatus, appeal_status AS appealStatus, control_status AS controlStatus, urge_pay_count AS urgePayCount, last_urge_pay_date AS lastUrgePayDate, last_upd_time AS lastUpdTime, last_upd_user AS lastUpdUser, make_user AS makeUser, make_time AS makeTime, charge_date AS chargeDate, start_date AS startDate, end_date AS endDate, settle_st AS settleSt, remark, base_bill_id AS baseBillId, batch_id AS batchId, bill_period AS billPeriod
+    </sql>
+
+</mapper>

@@ -1,0 +1,66 @@
+sign:
+  enc_key_pub: MFkwEwYHKoZIzj0CAQYIKoEcz1UBgi0DQgAEDjIGzyssdjXchEWdJOKaH/LQsExdJdt093OsH30pjIEehkcYhYrj/rlVxlL8fcWC6SQQ+iui8V1D7xMex0neTw==
+  sign_private_key: MIGTAgEAMBMGByqGSM49AgEGCCqBHM9VAYItBHkwdwIBAQQg4RaY3o3TLFV4qdnsyoGAjboEsvfpPg44f/k281w49tegCgYIKoEcz1UBgi2hRANCAAQOMgbPKyx2NdyERZ0k4pof8tCwTF0l23T3c6wffSmMgR6GRxiFiuP+uVXGUvx9xYLpJBD6K6LxXUPvEx7HSd5P
+  appkey: 163a6864ce2bac92b52ccec1
+  masterSecret: bf6e3280fbd2628595aba132
+message: 辛勤的老师给你布置了一点作业，请查看！
+
+# 定位模板的目录
+#spring:
+#  mvc:
+#    view:
+#      prefix: classpath:/templates/  # 给返回的页面添加后缀名
+#      suffix: .html
+#  datasource:
+#    type:
+#　　type: com.alibaba.druid.pool.DruidDataSource   #配置当前要使用的数据源的操作类型那个
+#　　driver-class-name: com.mysql.jdbc.Driver       #配置MySQL的驱动程序类
+#　　url: jdbc:mysql://192.168.1.225:3306/bill_platform?seUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+#　　username: root
+#　　password: gb123456
+#　　filters: stat,wall,log4j     #druid监控配置
+#　　dbcp2:
+#  　　min-idle:  5
+#  　　initial-size: 5
+#  　　max-total: 5          #最大的连接数
+#  　　max-wait-millis: 200        #等待连接获取的最大超时时间
+#  http:
+#          converters:
+#            preferred-json-mapper: gson
+
+server:
+  port: 9090
+spring:
+  mvc:
+    view:
+      prefix: classpath:/templates/
+      suffix: .html
+  datasource:
+    #驱动
+    driver-class-name: com.mysql.jdbc.Driver
+    #数据源类别
+    type: com.alibaba.druid.pool.DruidDataSource
+    #MySQL连接信息
+    url: jdbc:mysql://192.168.1.225:3306/bill_platform?seUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+    #账号
+    username: root
+    #密码
+    password: gb123456
+    #druid监控配置
+    filters: stat,wall,log4j
+    dbcp2:
+      #数据库连接池的最小维持连接数
+      min-idle: 5
+      #初始化提供的连接数
+      initial-size: 5
+      #最大的连接数
+      max-total: 5
+      #等待连接获取的最大超时时间
+      max-wait-millis: 200
+  http:
+    converters:
+      preferred-json-mapper: gson
+
+logging:
+  level:
+    com.example.demo.dao: debug
