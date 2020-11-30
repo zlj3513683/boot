@@ -1,5 +1,10 @@
 package com.example.demo.jvm;
 
+import com.example.demo.entity.BussBillInfo;
+
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 功能：解释器三种模式（一般都是选择混合方式，因为模板解释器的性能更强，但是具体业务中有的代码仅仅执行一次，
  * 用模板解释器会把代码编译放入方法区占用内存不好，则选取使用混合型）
@@ -15,14 +20,25 @@ public class JsqTest {
 
         long tome1 = System.currentTimeMillis();
 
-        print();
+//        print();
 
         long t2 = System.currentTimeMillis();
 
         System.out.println("耗时：" + (t2- tome1) + "ms");
 
+        Map<String,String> map = new HashMap();
+        String a = map.put("aaa","嗯嗯嗯");
+        System.out.println(a);
+
+
+        String s = "1";
+        String i = "1";
+        System.out.println(s.equals(i));
+        System.out.println(s == i);
+
 
     }
+
 
     private static void print(){
 
@@ -31,5 +47,11 @@ public class JsqTest {
         }
 
     }
+
+    /*public void pri(K key,V value){
+
+
+
+    }*/
 
 }
