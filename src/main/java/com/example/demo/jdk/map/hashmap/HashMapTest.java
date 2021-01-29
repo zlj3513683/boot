@@ -31,7 +31,7 @@ public class HashMapTest {
 
         System.out.println("2:" + hashMap.hashCode());
 
-        MapSon mapSon = new MapSon();
+        /*MapSon mapSon = new MapSon();
         System.out.println(new MapSon<>().hashCode());
         System.out.println(mapSon.hashCode());
         System.out.println(mapSon.getClass());
@@ -41,7 +41,7 @@ public class HashMapTest {
 
 //        mapSon.dd();
         MapSon mapSon2 = (MapSon)mapSon.clone();
-        System.out.println(mapSon2.hashCode());
+        System.out.println(mapSon2.hashCode());*/
 
     }
 

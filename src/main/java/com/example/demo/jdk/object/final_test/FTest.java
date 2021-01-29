@@ -20,38 +20,38 @@ public class FTest {
         //1.final修饰类 FinalTest：无法被继承 方法不能重写 不能同时用abstract和final修饰类
 
         //2.finale修饰成员变量 变量不可变  也就是基础类型的值不变和引用类型的引用不可变
-        ParmFinalTest parmFinalTest = new ParmFinalTest();
+//        ParmFinalTest parmFinalTest = new ParmFinalTest();
 //        parmFinalTest.i1 = 2;  报错
 
-        Integer i2 = parmFinalTest.i2;
-        System.out.println(i2.toString());
-        System.out.println(parmFinalTest.i2.toString());
+//        Integer i2 = parmFinalTest.i2;
+//        System.out.println(i2.toString());
+//        System.out.println(parmFinalTest.i2.toString());
 //        i2 = new Integer(222);
 //        System.out.println(i2.hashCode());
 //        System.out.println(parmFinalTest.i2);
 //        System.out.println(i2.toString());
         System.out.println();
 
-        System.out.println(parmFinalTest.s);
-        String ss = parmFinalTest.s;
-        ss = "231122222222";
-        System.out.println(parmFinalTest.s);
-        System.out.println();
-
-        Test r1 = parmFinalTest.f1;
-        System.out.println(r1.toString());
-        System.out.println(parmFinalTest.f1.toString());
-        r1.setS("222222");
-        System.out.println(r1.getS());
-        r1.setS("333333");
-        System.out.println(r1.getS());
-        r1 = new Test();
-        System.out.println(r1.getS());
-        System.out.println(r1.toString());
-        parmFinalTest.f1.setS("23112");
-        System.out.println(parmFinalTest.f1.toString());
-        //3、final修饰成员方法  方法不能被重写
-        System.out.println(r1.equals(parmFinalTest.f1));
+//        System.out.println(parmFinalTest.s);
+//        String ss = parmFinalTest.s;
+//        ss = "231122222222";
+//        System.out.println(parmFinalTest.s);
+//        System.out.println();
+//
+//        Test r1 = parmFinalTest.f1;
+//        System.out.println(r1.toString());
+//        System.out.println(parmFinalTest.f1.toString());
+//        r1.setS("222222");
+//        System.out.println(r1.getS());
+//        r1.setS("333333");
+//        System.out.println(r1.getS());
+//        r1 = new Test();
+//        System.out.println(r1.getS());
+//        System.out.println(r1.toString());
+//        parmFinalTest.f1.setS("23112");
+//        System.out.println(parmFinalTest.f1.toString());
+//        //3、final修饰成员方法  方法不能被重写
+//        System.out.println(r1.equals(parmFinalTest.f1));
 
 
         System.out.println();
