@@ -11,6 +11,7 @@ import java.util.TreeMap;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -32,6 +33,7 @@ import com.alibaba.fastjson.JSON;
  * @author liaofen
  *
  */
+@Slf4j
 public class EpccApi201Test {
 	
 	

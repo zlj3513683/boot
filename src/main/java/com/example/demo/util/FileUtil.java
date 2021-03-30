@@ -1,6 +1,7 @@
 package com.example.demo.util;
 
 import org.bouncycastle.util.encoders.Base64;
+import org.mybatis.spring.annotation.MapperScan;
 
 import java.io.*;
 
@@ -10,6 +11,7 @@ import java.io.*;
  * @author 2020/1/14
  * @author zoulinjun
  */
+@MapperScan
 public class FileUtil {
     public static String file2Base64(File file) {
         if(file==null) {
@@ -21,7 +23,8 @@ public class FileUtil {
             fin = new FileInputStream(file);
             byte[] buff = new byte[fin.available()];
             fin.read(buff);
-            base64 = Base64.toBase64String(buff);
+//            base64 = Base64.toBase64String(buff);
+            base64 = java.util.Base64.getEncoder().encodeToString(buff);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -42,7 +45,8 @@ public class FileUtil {
         if(base64==null||"".equals(base64)) {
             return null;
         }
-        byte[] buff=Base64.decode(base64);
+//        byte[] buff=Base64.decode(base64);
+        byte[] buff=java.util.Base64.getDecoder().decode(base64);
         File file=null;
         FileOutputStream fout=null;
         try {
@@ -65,7 +69,7 @@ public class FileUtil {
     }
 
     public static void main(String[] args) throws IOException {
-        String picStr = FileUtil.file2Base64(new File("E:\\zlj\\qb\\doc\\222.txt"));
+        String picStr = FileUtil.file2Base64(new File("C:\\zlj\\doc\\file\\123.jpg"));
         System.out.println(picStr);
         File file = FileUtil.base64ToFile(picStr);
 
@@ -78,7 +82,7 @@ public class FileUtil {
             in = new FileInputStream(file);
             showAvailableBytes(in);
             // 读入多个字节到字节数组中，byteread为一次读入的字节数
-            FileOutputStream fout=new FileOutputStream(new File("E:\\zlj\\qb\\doc\\333.txt"));
+            FileOutputStream fout=new FileOutputStream(new File("C:\\zlj\\doc\\file\\1121313.jpg"));
             while ((byteread = in.read(tempbytes)) != -1) {
                 fout.write(tempbytes, 0, byteread);
             }
